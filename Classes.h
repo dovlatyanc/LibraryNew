@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 //сделать через принцип инкапсуляции в идеале
 
@@ -496,7 +496,7 @@ public:
 				book.year = stoi(fields[3]);
 				book.total_number = stoi(fields[4]);
 				book.number_available = stoi(fields[5]);
-				book.ISBN = stoi(fields[6]);
+				book.ISBN = fields[6];
 				book.pages = stoi(fields[7]);
 			}
 			catch (invalid_argument &e) {

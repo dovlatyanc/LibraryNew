@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include"Classes.h"
 
@@ -625,6 +625,7 @@ void LibraryMenu(Library &lib) {
 			default: {
 				cout << "Не получается загрузить выбранное Вами" << endl;
 				Sleep(1000);
+				break;
 			}
 				   break;
 			}
@@ -649,8 +650,9 @@ void LibraryMenu(Library &lib) {
 		default: {
 			cout << "Не получается сделать то что Bы хотите(((" << endl;
 			Sleep(1000);
-		}
-			   break;
+
+			break;
+			}
 		}
 	}
 }
