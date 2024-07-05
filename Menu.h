@@ -28,19 +28,19 @@ istream &operator>>(istream &is, LoadFileMenu &menu) {
 	return is;
 }
 
-void addAutor(Library &lib) {//избавление от дуболирования
+void addAutor(Library &lib) {//РёР·Р±Р°РІР»РµРЅРёРµ РѕС‚ РґСѓР±РѕР»РёСЂРѕРІР°РЅРёСЏ
 
 	int year;
-	cout << "Введите год  рождения автора: " << endl;
+	cout << "Р’РІРµРґРёС‚Рµ РіРѕРґ  СЂРѕР¶РґРµРЅРёСЏ Р°РІС‚РѕСЂР°: " << endl;
 	cin >> year;
 
 	string nameAuthor;
-	cout << "Введите имя автора: " << endl;
+	cout << "Р’РІРµРґРёС‚Рµ РёРјСЏ Р°РІС‚РѕСЂР°: " << endl;
 	cin >> nameAuthor;
 
 	lib.addAuthor(nameAuthor, year);
 
-	cout << " Автор " << nameAuthor << " успешно добавлен!" << endl;
+	cout << " РђРІС‚РѕСЂ " << nameAuthor << " СѓСЃРїРµС€РЅРѕ РґРѕР±Р°РІР»РµРЅ!" << endl;
 
 	Sleep(1000);
 
@@ -56,7 +56,7 @@ void LibraryMenu(Library &lib) {
 		int addAuthors;
 
 		do {
-			cout << "В библиотеке пока что нет авторов! Чтобы добавить авторов нажмите - [1] ! " << endl;
+			cout << "Р’ Р±РёР±Р»РёРѕС‚РµРєРµ РїРѕРєР° С‡С‚Рѕ РЅРµС‚ Р°РІС‚РѕСЂРѕРІ! Р§С‚РѕР±С‹ РґРѕР±Р°РІРёС‚СЊ Р°РІС‚РѕСЂРѕРІ РЅР°Р¶РјРёС‚Рµ - [1] ! " << endl;
 			cin >> addAuthors;
 
 		} while (addAuthors != 1);
@@ -75,18 +75,18 @@ void LibraryMenu(Library &lib) {
 
 		system("cls");
 
-		cout << "Выберите пункт: " << endl;
-		cout << "1. Управление книгами " << endl;
-		cout << "2. Управление журналами " << endl;
-		cout << "3. Управление авторами " << endl;
-		cout << "4. Управление читателями " << endl;
-		cout << "5. Выдача предметов читателям " << endl;
-		cout << "6. Возврат  предметов от читателей " << endl;
-		cout << "7. Общий поиск по книгам и журналам " << endl;
-		cout << "8. Загрузка данных " << endl;
-		cout << "9. Выход " << endl;
+		cout << "Р’С‹Р±РµСЂРёС‚Рµ РїСѓРЅРєС‚: " << endl;
+		cout << "1. РЈРїСЂР°РІР»РµРЅРёРµ РєРЅРёРіР°РјРё " << endl;
+		cout << "2. РЈРїСЂР°РІР»РµРЅРёРµ Р¶СѓСЂРЅР°Р»Р°РјРё " << endl;
+		cout << "3. РЈРїСЂР°РІР»РµРЅРёРµ Р°РІС‚РѕСЂР°РјРё " << endl;
+		cout << "4. РЈРїСЂР°РІР»РµРЅРёРµ С‡РёС‚Р°С‚РµР»СЏРјРё " << endl;
+		cout << "5. Р’С‹РґР°С‡Р° РїСЂРµРґРјРµС‚РѕРІ С‡РёС‚Р°С‚РµР»СЏРј " << endl;
+		cout << "6. Р’РѕР·РІСЂР°С‚  РїСЂРµРґРјРµС‚РѕРІ РѕС‚ С‡РёС‚Р°С‚РµР»РµР№ " << endl;
+		cout << "7. РћР±С‰РёР№ РїРѕРёСЃРє РїРѕ РєРЅРёРіР°Рј Рё Р¶СѓСЂРЅР°Р»Р°Рј " << endl;
+		cout << "8. Р—Р°РіСЂСѓР·РєР° РґР°РЅРЅС‹С… " << endl;
+		cout << "9. Р’С‹С…РѕРґ " << endl;
 
-		///добавить очистки консоли после выбора
+		///РґРѕР±Р°РІРёС‚СЊ РѕС‡РёСЃС‚РєРё РєРѕРЅСЃРѕР»Рё РїРѕСЃР»Рµ РІС‹Р±РѕСЂР°
 
 		cin >> menu_item_d;
 
@@ -97,9 +97,9 @@ void LibraryMenu(Library &lib) {
 		{
 			string menu_itemf;
 
-			cout << "\t1.1. Добавить книгу\n" <<
-				"\t1.2. Поиск книг\n" <<
-				"\t1.3. Список всех книг\n";
+			cout << "\t1.1. Р”РѕР±Р°РІРёС‚СЊ РєРЅРёРіСѓ\n" <<
+				"\t1.2. РџРѕРёСЃРє РєРЅРёРі\n" <<
+				"\t1.3. РЎРїРёСЃРѕРє РІСЃРµС… РєРЅРёРі\n";
 			int add;
 
 			do {
@@ -112,19 +112,19 @@ void LibraryMenu(Library &lib) {
 						system("cls");
 
 						int id;
-						cout << "\t\tВведите ID книги: " << endl;
+						cout << "\t\tР’РІРµРґРёС‚Рµ ID РєРЅРёРіРё: " << endl;
 						cin >> id;
 						string title;
-						cout << "\t\tВведите название книги: " << endl;
+						cout << "\t\tР’РІРµРґРёС‚Рµ РЅР°Р·РІР°РЅРёРµ РєРЅРёРіРё: " << endl;
 						cin >> title;
 
 						string nameAuthor;
-						cout << "\t\tВведите автора книги : " << endl;
+						cout << "\t\tР’РІРµРґРёС‚Рµ Р°РІС‚РѕСЂР° РєРЅРёРіРё : " << endl;
 						cin >> nameAuthor;
 
 						if (!lib.findAuthor(nameAuthor))
 						{
-							cout << "\t\t\tСначала добавьте автора!" << endl;
+							cout << "\t\t\tРЎРЅР°С‡Р°Р»Р° РґРѕР±Р°РІСЊС‚Рµ Р°РІС‚РѕСЂР°!" << endl;
 							Sleep(1000);
 
 							break;
@@ -134,33 +134,33 @@ void LibraryMenu(Library &lib) {
 
 
 						int year;
-						cout << "\t\tВведите год издания книги : " << endl;
+						cout << "\t\tР’РІРµРґРёС‚Рµ РіРѕРґ РёР·РґР°РЅРёСЏ РєРЅРёРіРё : " << endl;
 						cin >> year;
 
 						int total;
-						cout << "\t\tВведите общее количество книг : " << endl;
+						cout << "\t\tР’РІРµРґРёС‚Рµ РѕР±С‰РµРµ РєРѕР»РёС‡РµСЃС‚РІРѕ РєРЅРёРі : " << endl;
 						cin >> total;
 
 						string IBSN;
-						cout << "\t\tВведите ISBN книги : " << endl;
+						cout << "\t\tР’РІРµРґРёС‚Рµ ISBN РєРЅРёРіРё : " << endl;
 						cin >> IBSN;
 
 						int pages;
-						cout << "\t\tВведите количество страниц книги : " << endl;
+						cout << "\t\tР’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚СЂР°РЅРёС† РєРЅРёРіРё : " << endl;
 						cin >> pages;
 
 						Book book(id, title, author, year, total, total, IBSN, pages);
 
-						author->list_of_books.push_back(&book);// добавляем нашему автору книжку в список произведений
+						author->list_of_books.push_back(&book);// РґРѕР±Р°РІР»СЏРµРј РЅР°С€РµРјСѓ Р°РІС‚РѕСЂСѓ РєРЅРёР¶РєСѓ РІ СЃРїРёСЃРѕРє РїСЂРѕРёР·РІРµРґРµРЅРёР№
 
 						lib.addBook(book);
 
-						cout << "Книга успешно добавлена. Хотите добавить новую книгу?-[1] ," <<
-							"Нет - [9]" << endl;
+						cout << "РљРЅРёРіР° СѓСЃРїРµС€РЅРѕ РґРѕР±Р°РІР»РµРЅР°. РҐРѕС‚РёС‚Рµ РґРѕР±Р°РІРёС‚СЊ РЅРѕРІСѓСЋ РєРЅРёРіСѓ?-[1] ," <<
+							"РќРµС‚ - [9]" << endl;
 						cin >> add;
 						if (add == Exit)
-							break;//выход из блока
-					} while (add == 1);//магические числа убрать 
+							break;//РІС‹С…РѕРґ РёР· Р±Р»РѕРєР°
+					} while (add == 1);//РјР°РіРёС‡РµСЃРєРёРµ С‡РёСЃР»Р° СѓР±СЂР°С‚СЊ 
 
 					break;
 				}
@@ -168,12 +168,12 @@ void LibraryMenu(Library &lib) {
 				else if (menu_itemf == "1.2")
 				{
 					string findMenu;
-					cout << "Введите критерий поиска:\n \t\t1. По названию\n\t\t2. По автору\n \t\t3. По году издания\n";
+					cout << "Р’РІРµРґРёС‚Рµ РєСЂРёС‚РµСЂРёР№ РїРѕРёСЃРєР°:\n \t\t1. РџРѕ РЅР°Р·РІР°РЅРёСЋ\n\t\t2. РџРѕ Р°РІС‚РѕСЂСѓ\n \t\t3. РџРѕ РіРѕРґСѓ РёР·РґР°РЅРёСЏ\n";
 					cin >> findMenu;
 					if (findMenu == "1") {
 						string name;
 
-						cout << "\t\tВведите название книги :" << endl;
+						cout << "\t\tР’РІРµРґРёС‚Рµ РЅР°Р·РІР°РЅРёРµ РєРЅРёРіРё :" << endl;
 
 						cin >> name;
 
@@ -186,10 +186,10 @@ void LibraryMenu(Library &lib) {
 					}
 					else if (findMenu == "2") {
 						string name, surname;
-						cout << "\t\tВведите имя автора книги :" << endl;
+						cout << "\t\tР’РІРµРґРёС‚Рµ РёРјСЏ Р°РІС‚РѕСЂР° РєРЅРёРіРё :" << endl;
 						cin >> name;
 
-						cout << "\t\tВведите фамилию автора книги :" << endl;
+						cout << "\t\tР’РІРµРґРёС‚Рµ С„Р°РјРёР»РёСЋ Р°РІС‚РѕСЂР° РєРЅРёРіРё :" << endl;
 						cin >> surname;
 
 						lib.findBook(name, surname);
@@ -199,7 +199,7 @@ void LibraryMenu(Library &lib) {
 					}
 					else if (findMenu == "3") {
 						int year;
-						cout << "\t\t\tВведите год издания книги : " << endl;
+						cout << "\t\t\tР’РІРµРґРёС‚Рµ РіРѕРґ РёР·РґР°РЅРёСЏ РєРЅРёРіРё : " << endl;
 						cin >> year;
 
 						lib.findBook(year);
@@ -212,7 +212,7 @@ void LibraryMenu(Library &lib) {
 						}
 
 					}
-					break;// сделать выход
+					break;// СЃРґРµР»Р°С‚СЊ РІС‹С…РѕРґ
 				}
 				else if (menu_itemf == "1.3")
 				{
@@ -220,10 +220,10 @@ void LibraryMenu(Library &lib) {
 
 					system("pause");
 
-					break;// сделать выход
+					break;// СЃРґРµР»Р°С‚СЊ РІС‹С…РѕРґ
 				}
 				else
-					cout << "Некорректное значение! Введите заново!" << endl;
+					cout << "РќРµРєРѕСЂСЂРµРєС‚РЅРѕРµ Р·РЅР°С‡РµРЅРёРµ! Р’РІРµРґРёС‚Рµ Р·Р°РЅРѕРІРѕ!" << endl;
 
 			} while (menu_itemf != "1.1" || menu_itemf != "1.2" || menu_itemf != "1.3");
 
@@ -233,9 +233,9 @@ void LibraryMenu(Library &lib) {
 		{
 			string menu_itemf;
 
-			cout << "\t2.1. Добавить журнал\n" <<
-				"\t2.2. Поиск журналов\n" <<
-				"\t2.3. Список всех журналов\n";
+			cout << "\t2.1. Р”РѕР±Р°РІРёС‚СЊ Р¶СѓСЂРЅР°Р»\n" <<
+				"\t2.2. РџРѕРёСЃРє Р¶СѓСЂРЅР°Р»РѕРІ\n" <<
+				"\t2.3. РЎРїРёСЃРѕРє РІСЃРµС… Р¶СѓСЂРЅР°Р»РѕРІ\n";
 			int add;
 			do {
 
@@ -248,20 +248,20 @@ void LibraryMenu(Library &lib) {
 						system("cls");
 
 						int id;
-						cout << "\t\tВведите ID журнала:  " << endl;
+						cout << "\t\tР’РІРµРґРёС‚Рµ ID Р¶СѓСЂРЅР°Р»Р°:  " << endl;
 						cin >> id;
 
 						string title;
-						cout << "\t\tВведите название журнала " << endl;
+						cout << "\t\tР’РІРµРґРёС‚Рµ РЅР°Р·РІР°РЅРёРµ Р¶СѓСЂРЅР°Р»Р° " << endl;
 						cin >> title;
 
 						string nameAuthor;
-						cout << "\t\tВведите автора журнала : " << endl;
+						cout << "\t\tР’РІРµРґРёС‚Рµ Р°РІС‚РѕСЂР° Р¶СѓСЂРЅР°Р»Р° : " << endl;
 						cin >> nameAuthor;
 
 						if (!lib.findAuthor(nameAuthor))
 						{
-							cout << "\t\t\tСначала добавьте автора! Автор с таким именем не найден" << endl;
+							cout << "\t\t\tРЎРЅР°С‡Р°Р»Р° РґРѕР±Р°РІСЊС‚Рµ Р°РІС‚РѕСЂР°! РђРІС‚РѕСЂ СЃ С‚Р°РєРёРј РёРјРµРЅРµРј РЅРµ РЅР°Р№РґРµРЅ" << endl;
 							break;
 						}
 
@@ -269,39 +269,39 @@ void LibraryMenu(Library &lib) {
 						author = lib.findAuthor(nameAuthor);
 
 						int year;
-						cout << "\t\tВведите год издания журнала : " << endl;
+						cout << "\t\tР’РІРµРґРёС‚Рµ РіРѕРґ РёР·РґР°РЅРёСЏ Р¶СѓСЂРЅР°Р»Р° : " << endl;
 						cin >> year;
 						int total;
-						cout << "\t\tВведите общее количество журналов :  " << endl;
+						cout << "\t\tР’РІРµРґРёС‚Рµ РѕР±С‰РµРµ РєРѕР»РёС‡РµСЃС‚РІРѕ Р¶СѓСЂРЅР°Р»РѕРІ :  " << endl;
 						cin >> total;
 						int num;
-						cout << "\t\tВведите номер выпуска журнала :  " << endl;
+						cout << "\t\tР’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ РІС‹РїСѓСЃРєР° Р¶СѓСЂРЅР°Р»Р° :  " << endl;
 						cin >> num;
 						string category;
-						cout << "\t\tВведите категорию журнала : " << endl;
+						cout << "\t\tР’РІРµРґРёС‚Рµ РєР°С‚РµРіРѕСЂРёСЋ Р¶СѓСЂРЅР°Р»Р° : " << endl;
 						cin >> category;
 
 						Magazine mag(id, title, author, year, total, total, num, category);
 						lib.addMagazine(mag);
 
-						author->list_of_books.push_back(&mag);// добавляем нашему автору журнал в список произведений
+						author->list_of_books.push_back(&mag);// РґРѕР±Р°РІР»СЏРµРј РЅР°С€РµРјСѓ Р°РІС‚РѕСЂСѓ Р¶СѓСЂРЅР°Р» РІ СЃРїРёСЃРѕРє РїСЂРѕРёР·РІРµРґРµРЅРёР№
 
-						cout << "Журнал успешно добавлен. Хотите добавить новый? -[1] ," <<
-							"Нет - [9]" << endl;
+						cout << "Р–СѓСЂРЅР°Р» СѓСЃРїРµС€РЅРѕ РґРѕР±Р°РІР»РµРЅ. РҐРѕС‚РёС‚Рµ РґРѕР±Р°РІРёС‚СЊ РЅРѕРІС‹Р№? -[1] ," <<
+							"РќРµС‚ - [9]" << endl;
 						cin >> add;
 						if (add == Exit)
-							break;//выход из блока
-					} while (add == 1);// добавить еще  + проверка от дураков
+							break;//РІС‹С…РѕРґ РёР· Р±Р»РѕРєР°
+					} while (add == 1);// РґРѕР±Р°РІРёС‚СЊ РµС‰Рµ  + РїСЂРѕРІРµСЂРєР° РѕС‚ РґСѓСЂР°РєРѕРІ
 					break;
 				}
 				else if (menu_itemf == "2.2")
 				{
 					string findMenu;
-					cout << "Введите критерий поиска:\n \t\t1. По названию\n\t\t2. По автору\n \t\t3. По году издания\n";
+					cout << "Р’РІРµРґРёС‚Рµ РєСЂРёС‚РµСЂРёР№ РїРѕРёСЃРєР°:\n \t\t1. РџРѕ РЅР°Р·РІР°РЅРёСЋ\n\t\t2. РџРѕ Р°РІС‚РѕСЂСѓ\n \t\t3. РџРѕ РіРѕРґСѓ РёР·РґР°РЅРёСЏ\n";
 					cin >> findMenu;
 					if (findMenu == "1") {
 						string name;
-						cout << "\t\tВведите название журнала :" << endl;
+						cout << "\t\tР’РІРµРґРёС‚Рµ РЅР°Р·РІР°РЅРёРµ Р¶СѓСЂРЅР°Р»Р° :" << endl;
 						cin >> name;
 						lib.findMagazine(name);
 
@@ -312,7 +312,7 @@ void LibraryMenu(Library &lib) {
 					}
 					else if (findMenu == "2") {
 						string name;
-						cout << "\t\tВведите название редакции :" << endl;
+						cout << "\t\tР’РІРµРґРёС‚Рµ РЅР°Р·РІР°РЅРёРµ СЂРµРґР°РєС†РёРё :" << endl;
 						cin >> name;
 
 						lib.findMagazineAuthor(name);
@@ -322,7 +322,7 @@ void LibraryMenu(Library &lib) {
 					}
 					else if (findMenu == "3") {
 						int year;
-						cout << "\t\t\tВведите год издания журнала: " << endl;
+						cout << "\t\t\tР’РІРµРґРёС‚Рµ РіРѕРґ РёР·РґР°РЅРёСЏ Р¶СѓСЂРЅР°Р»Р°: " << endl;
 						cin >> year;
 
 
@@ -345,7 +345,7 @@ void LibraryMenu(Library &lib) {
 					break;
 				}
 				else
-					cout << "Некорректное значение! Введите заново!" << endl;
+					cout << "РќРµРєРѕСЂСЂРµРєС‚РЅРѕРµ Р·РЅР°С‡РµРЅРёРµ! Р’РІРµРґРёС‚Рµ Р·Р°РЅРѕРІРѕ!" << endl;
 
 			} while (menu_itemf != "2.1" || menu_itemf != "2.2" || menu_itemf != "2.3");
 			break;
@@ -354,8 +354,8 @@ void LibraryMenu(Library &lib) {
 		{
 			string menu_itemf;
 
-			cout << "\t3.1. Добавить автора\n" <<
-				"\t3.2. Список всех авторов\n";
+			cout << "\t3.1. Р”РѕР±Р°РІРёС‚СЊ Р°РІС‚РѕСЂР°\n" <<
+				"\t3.2. РЎРїРёСЃРѕРє РІСЃРµС… Р°РІС‚РѕСЂРѕРІ\n";
 			do {
 
 
@@ -368,20 +368,20 @@ void LibraryMenu(Library &lib) {
 
 						addAutor(lib);
 
-						cout << "Хотите добавить нового автора?-[1] ," <<
-							"Нет - [9]" << endl;
+						cout << "РҐРѕС‚РёС‚Рµ РґРѕР±Р°РІРёС‚СЊ РЅРѕРІРѕРіРѕ Р°РІС‚РѕСЂР°?-[1] ," <<
+							"РќРµС‚ - [9]" << endl;
 						cin >> add;
 						if (add == Exit)
-							break;//выход из блока
+							break;//РІС‹С…РѕРґ РёР· Р±Р»РѕРєР°
 					} while (add == 1);
 					break;
 				}
 
 				else if (menu_itemf == "3.2")
 				{
-					// Сортируем вектор авторов в лексикографическом порядке
+					// РЎРѕСЂС‚РёСЂСѓРµРј РІРµРєС‚РѕСЂ Р°РІС‚РѕСЂРѕРІ РІ Р»РµРєСЃРёРєРѕРіСЂР°С„РёС‡РµСЃРєРѕРј РїРѕСЂСЏРґРєРµ
 					sort(lib.authors.begin(), lib.authors.end(), compareAuthors);
-					// Выводим отсортированный список авторов
+					// Р’С‹РІРѕРґРёРј РѕС‚СЃРѕСЂС‚РёСЂРѕРІР°РЅРЅС‹Р№ СЃРїРёСЃРѕРє Р°РІС‚РѕСЂРѕРІ
 					for (const Author &author : lib.authors) {
 						cout << author.full_name << endl;
 					}
@@ -389,7 +389,7 @@ void LibraryMenu(Library &lib) {
 					break;
 				}
 				else
-					cout << "Некорректное значение! Введите заново!" << endl;
+					cout << "РќРµРєРѕСЂСЂРµРєС‚РЅРѕРµ Р·РЅР°С‡РµРЅРёРµ! Р’РІРµРґРёС‚Рµ Р·Р°РЅРѕРІРѕ!" << endl;
 
 			} while (menu_itemf != "3.1" || menu_itemf != "3.2");
 
@@ -399,9 +399,9 @@ void LibraryMenu(Library &lib) {
 		{
 			string menu_itemf;
 
-			cout << "\t4.1. Добавить читателя\n" <<
-				"\t4.2. Поиск читателя\n" <<
-				"\t4.3. Список всех читателей\n";
+			cout << "\t4.1. Р”РѕР±Р°РІРёС‚СЊ С‡РёС‚Р°С‚РµР»СЏ\n" <<
+				"\t4.2. РџРѕРёСЃРє С‡РёС‚Р°С‚РµР»СЏ\n" <<
+				"\t4.3. РЎРїРёСЃРѕРє РІСЃРµС… С‡РёС‚Р°С‚РµР»РµР№\n";
 			do {
 
 				cin >> menu_itemf;
@@ -413,30 +413,30 @@ void LibraryMenu(Library &lib) {
 						system("cls");
 
 						string name;
-						cout << "Введите имя читателя: " << endl;
+						cout << "Р’РІРµРґРёС‚Рµ РёРјСЏ С‡РёС‚Р°С‚РµР»СЏ: " << endl;
 						cin >> name;
 
 						lib.addReader(name);
 
 						system("pause");
 
-						cout << "Хотите добавить нового?-[1] ," <<
-							"Нет - [9]" << endl;
+						cout << "РҐРѕС‚РёС‚Рµ РґРѕР±Р°РІРёС‚СЊ РЅРѕРІРѕРіРѕ?-[1] ," <<
+							"РќРµС‚ - [9]" << endl;
 						cin >> add;
 						if (add == Exit)
-							break;//выход из блока
+							break;//РІС‹С…РѕРґ РёР· Р±Р»РѕРєР°
 					} while (add == 1);
 					break;
 				}
 				else if (menu_itemf == "4.2")
 				{
 					string menu_item;
-					cout << "\t\tВведите критерий поиска:\n \t\t4.2.1. По имя - фамилия\n \t\t4.2.2. По номеру читательского билета\n";
+					cout << "\t\tР’РІРµРґРёС‚Рµ РєСЂРёС‚РµСЂРёР№ РїРѕРёСЃРєР°:\n \t\t4.2.1. РџРѕ РёРјСЏ - С„Р°РјРёР»РёСЏ\n \t\t4.2.2. РџРѕ РЅРѕРјРµСЂСѓ С‡РёС‚Р°С‚РµР»СЊСЃРєРѕРіРѕ Р±РёР»РµС‚Р°\n";
 					cin >> menu_item;
 					if (menu_item == "4.2.1")
 					{
 						string name;
-						cout << "Введите имя и фамилию читателя через \"_\": " << endl;
+						cout << "Р’РІРµРґРёС‚Рµ РёРјСЏ Рё С„Р°РјРёР»РёСЋ С‡РёС‚Р°С‚РµР»СЏ С‡РµСЂРµР· \"_\": " << endl;
 						cin >> name;
 						lib.findReader(name);
 
@@ -451,7 +451,7 @@ void LibraryMenu(Library &lib) {
 					else if (menu_item == "4.2.2")
 					{
 						int id;
-						cout << "Введите ID читателя: " << endl;
+						cout << "Р’РІРµРґРёС‚Рµ ID С‡РёС‚Р°С‚РµР»СЏ: " << endl;
 						cin >> id;
 
 						lib.findReader(id);
@@ -471,7 +471,7 @@ void LibraryMenu(Library &lib) {
 					break;
 				}
 				else
-					cout << "Некорректное значение! Введите заново!" << endl;
+					cout << "РќРµРєРѕСЂСЂРµРєС‚РЅРѕРµ Р·РЅР°С‡РµРЅРёРµ! Р’РІРµРґРёС‚Рµ Р·Р°РЅРѕРІРѕ!" << endl;
 
 			} while (menu_itemf != "4.1" || menu_itemf != "4.2" || menu_itemf != "4.3");
 
@@ -481,7 +481,7 @@ void LibraryMenu(Library &lib) {
 		{
 			string menu_itemf;
 
-			cout << "\t5.1. Выдать предмет читателю\n";
+			cout << "\t5.1. Р’С‹РґР°С‚СЊ РїСЂРµРґРјРµС‚ С‡РёС‚Р°С‚РµР»СЋ\n";
 			do {
 				cin >> menu_itemf;
 
@@ -490,19 +490,19 @@ void LibraryMenu(Library &lib) {
 
 				if (menu_itemf == "5.1")
 				{
-					// Запросить у пользователя номер читательского билета
-					cout << "Введите номер читательского билета: ";
+					// Р—Р°РїСЂРѕСЃРёС‚СЊ Сѓ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ РЅРѕРјРµСЂ С‡РёС‚Р°С‚РµР»СЊСЃРєРѕРіРѕ Р±РёР»РµС‚Р°
+					cout << "Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ С‡РёС‚Р°С‚РµР»СЊСЃРєРѕРіРѕ Р±РёР»РµС‚Р°: ";
 					int reader_id;
 					cin >> reader_id;
 
-					// Запросить у пользователя название предмета
-					cout << "Введите название предмета: ";
+					// Р—Р°РїСЂРѕСЃРёС‚СЊ Сѓ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ РЅР°Р·РІР°РЅРёРµ РїСЂРµРґРјРµС‚Р°
+					cout << "Р’РІРµРґРёС‚Рµ РЅР°Р·РІР°РЅРёРµ РїСЂРµРґРјРµС‚Р°: ";
 					string item_name;
 					cin >> item_name;
 
 					if (lib.findBook(item_name)) {
 						if (lib.findReader(reader_id)) {
-							//если предмет книга 
+							//РµСЃР»Рё РїСЂРµРґРјРµС‚ РєРЅРёРіР° 
 							Reader *tempReader = lib.findReader(reader_id);
 							Book *tempBook = lib.findBook(item_name);
 							lib.takeItem(*tempReader, *tempBook);
@@ -510,7 +510,7 @@ void LibraryMenu(Library &lib) {
 					}
 					else if (lib.findMagazine(item_name)) {
 						if (lib.findReader(reader_id)) {
-							//если предмет magazine
+							//РµСЃР»Рё РїСЂРµРґРјРµС‚ magazine
 							Reader *tempReader = lib.findReader(reader_id);
 							Magazine *tempMag = lib.findMagazine(item_name);
 							lib.takeItem(*tempReader, *tempMag);
@@ -519,7 +519,7 @@ void LibraryMenu(Library &lib) {
 					break;
 				}
 				else
-					cout << "Некорректное значение! Введите заново!" << endl;
+					cout << "РќРµРєРѕСЂСЂРµРєС‚РЅРѕРµ Р·РЅР°С‡РµРЅРёРµ! Р’РІРµРґРёС‚Рµ Р·Р°РЅРѕРІРѕ!" << endl;
 
 			} while (menu_itemf != "5.1");
 
@@ -529,7 +529,7 @@ void LibraryMenu(Library &lib) {
 		{
 			string menu_itemf;
 
-			cout << "\t6.1. Возврат предмета(книги либо журнала)\n";
+			cout << "\t6.1. Р’РѕР·РІСЂР°С‚ РїСЂРµРґРјРµС‚Р°(РєРЅРёРіРё Р»РёР±Рѕ Р¶СѓСЂРЅР°Р»Р°)\n";
 			do {
 
 				cin >> menu_itemf;
@@ -538,18 +538,18 @@ void LibraryMenu(Library &lib) {
 				system("cls");
 
 				if (menu_itemf == "6.1")
-				{// Запросить у пользователя номер читательского билета
-					cout << "Введите номер читательского билета: ";
+				{// Р—Р°РїСЂРѕСЃРёС‚СЊ Сѓ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ РЅРѕРјРµСЂ С‡РёС‚Р°С‚РµР»СЊСЃРєРѕРіРѕ Р±РёР»РµС‚Р°
+					cout << "Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ С‡РёС‚Р°С‚РµР»СЊСЃРєРѕРіРѕ Р±РёР»РµС‚Р°: ";
 					int reader_id;
 					cin >> reader_id;
 
-					// Запросить у пользователя название предмета
-					cout << "Введите название предмета: ";
+					// Р—Р°РїСЂРѕСЃРёС‚СЊ Сѓ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ РЅР°Р·РІР°РЅРёРµ РїСЂРµРґРјРµС‚Р°
+					cout << "Р’РІРµРґРёС‚Рµ РЅР°Р·РІР°РЅРёРµ РїСЂРµРґРјРµС‚Р°: ";
 					string item_name;
 					cin >> item_name;
 					if (lib.findBook(item_name)) {
 						if (lib.findReader(reader_id)) {
-							//если предмет книга 
+							//РµСЃР»Рё РїСЂРµРґРјРµС‚ РєРЅРёРіР° 
 							Reader *tempReader = lib.findReader(reader_id);
 							Book *tempBook = lib.findBook(item_name);
 							lib.returnItem(*tempReader, *tempBook);
@@ -557,7 +557,7 @@ void LibraryMenu(Library &lib) {
 					}
 					else if (lib.findMagazine(item_name)) {
 						if (lib.findReader(reader_id)) {
-							//если предмет magazine
+							//РµСЃР»Рё РїСЂРµРґРјРµС‚ magazine
 							Reader *tempReader = lib.findReader(reader_id);
 							Magazine *tempMag = lib.findMagazine(item_name);
 							lib.returnItem(*tempReader, *tempMag);
@@ -567,7 +567,7 @@ void LibraryMenu(Library &lib) {
 
 				}
 				else
-					cout << "Некорректное значение! Введите заново!" << endl;
+					cout << "РќРµРєРѕСЂСЂРµРєС‚РЅРѕРµ Р·РЅР°С‡РµРЅРёРµ! Р’РІРµРґРёС‚Рµ Р·Р°РЅРѕРІРѕ!" << endl;
 
 			} while (menu_itemf != "6.1");
 
@@ -577,7 +577,7 @@ void LibraryMenu(Library &lib) {
 		{
 			string menu_itemf;
 
-			cout << "\t 7.1. Поиск по году выхода\n";
+			cout << "\t 7.1. РџРѕРёСЃРє РїРѕ РіРѕРґСѓ РІС‹С…РѕРґР°\n";
 			do {
 				cin >> menu_itemf;
 
@@ -587,14 +587,14 @@ void LibraryMenu(Library &lib) {
 				if (menu_itemf == "7.1")
 				{
 					int year;
-					cout << "\t\tВведите год издания: " << endl;
+					cout << "\t\tР’РІРµРґРёС‚Рµ РіРѕРґ РёР·РґР°РЅРёСЏ: " << endl;
 					cin >> year;
 
 					lib.findMagazine(year);
 					lib.findBook(year);
 				}
 				else
-					cout << "Некорректное значение! Введите заново!" << endl;
+					cout << "РќРµРєРѕСЂСЂРµРєС‚РЅРѕРµ Р·РЅР°С‡РµРЅРёРµ! Р’РІРµРґРёС‚Рµ Р·Р°РЅРѕРІРѕ!" << endl;
 
 			} while (menu_itemf != "7.1");
 
@@ -604,26 +604,26 @@ void LibraryMenu(Library &lib) {
 		{
 			LoadFileMenu choice;
 
-			cout << "Нажмите чтобы выбрать критерий :\n" <<
-				"[1]-загрузить список книг" << endl <<
-				"[2]-загрузить список журналов" << endl <<
-				"[3]-загрузить список авторов" << endl <<
-				"[4]-загрузить список читателей" << endl;
+			cout << "РќР°Р¶РјРёС‚Рµ С‡С‚РѕР±С‹ РІС‹Р±СЂР°С‚СЊ РєСЂРёС‚РµСЂРёР№ :\n" <<
+				"[1]-Р·Р°РіСЂСѓР·РёС‚СЊ СЃРїРёСЃРѕРє РєРЅРёРі" << endl <<
+				"[2]-Р·Р°РіСЂСѓР·РёС‚СЊ СЃРїРёСЃРѕРє Р¶СѓСЂРЅР°Р»РѕРІ" << endl <<
+				"[3]-Р·Р°РіСЂСѓР·РёС‚СЊ СЃРїРёСЃРѕРє Р°РІС‚РѕСЂРѕРІ" << endl <<
+				"[4]-Р·Р°РіСЂСѓР·РёС‚СЊ СЃРїРёСЃРѕРє С‡РёС‚Р°С‚РµР»РµР№" << endl;
 
 			cin >> choice;
 
 			switch (choice)
 			{
-			case LoadBooks:lib.loadBooksFromFile("books.txt", lib.books);
+			case LoadBooks:lib.loadBooksFromFile("books.csv", lib.books);
 				break;
-			case LoadMagazines:lib.loadMagazinesFromFile("magazines.txt", lib.magazines);
+			case LoadMagazines:lib.loadMagazinesFromFile("magazines.csv", lib.magazines);
 				break;
-			case LoadAuthors:lib.loadAuthorsFromFile("authors.txt", lib.authors);
+			case LoadAuthors:lib.loadAuthorsFromFile("authors.csv", lib.authors);
 				break;
-			case LoadReaders:lib.loadReadersFromFile("readers.txt", lib.readers);
+			case LoadReaders:lib.loadReadersFromFile("readers.csv", lib.readers);
 				break;
 			default: {
-				cout << "Не получается загрузить выбранное Вами" << endl;
+				cout << "РќРµ РїРѕР»СѓС‡Р°РµС‚СЃСЏ Р·Р°РіСЂСѓР·РёС‚СЊ РІС‹Р±СЂР°РЅРЅРѕРµ Р’Р°РјРё" << endl;
 				Sleep(1000);
 			}
 				   break;
@@ -633,21 +633,21 @@ void LibraryMenu(Library &lib) {
 
 		case Exit: {
 			char ex;
-			cout << "Вы точно уверены что хотите выйти ? [Y/y][N/n]" << endl;
+			cout << "Р’С‹ С‚РѕС‡РЅРѕ СѓРІРµСЂРµРЅС‹ С‡С‚Рѕ С…РѕС‚РёС‚Рµ РІС‹Р№С‚Рё ? [Y/y][N/n]" << endl;
 			cin >> ex;
 			if (ex == 'Y' || ex == 'y')
 				return;
 			else if (ex == 'N' || ex == 'n')
 				break;
 			else {
-				cout << "Не получается осуществить выбранное Вами" << endl;
+				cout << "РќРµ РїРѕР»СѓС‡Р°РµС‚СЃСЏ РѕСЃСѓС‰РµСЃС‚РІРёС‚СЊ РІС‹Р±СЂР°РЅРЅРѕРµ Р’Р°РјРё" << endl;
 				Sleep(1000);
 				break;
 			}
 		}
 
 		default: {
-			cout << "Не получается сделать то что Bы хотите(((" << endl;
+			cout << "РќРµ РїРѕР»СѓС‡Р°РµС‚СЃСЏ СЃРґРµР»Р°С‚СЊ С‚Рѕ С‡С‚Рѕ BС‹ С…РѕС‚РёС‚Рµ(((" << endl;
 			Sleep(1000);
 		}
 			   break;
