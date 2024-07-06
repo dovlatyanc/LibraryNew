@@ -177,7 +177,6 @@ public:
 
 			for (Book &book : books) {
 				if (book.year == year) {
-					cout << "Книга " << book.getName() << " найдена! " << endl;
 					return &book;
 				}
 			}
@@ -194,7 +193,7 @@ public:
 
 			for (Book &book : books) {
 				if (book.title == name) {
-					cout << "Книга " << book.getName() << " найдена! " << endl;
+
 					return &book;
 				}
 			}
@@ -206,12 +205,12 @@ public:
 		}
 	}
 	//поиск по автору
-	Book *findBook(string name, string surname) {
+	Book *findBookAuthor(string name) {
 		{
 
 			for (Book &book : books) {
-				if (book.author->full_name == (name + "_" + surname)) {
-					cout << "Книга " << book.getName() << " найдена! " << endl;
+				if (book.author->full_name == name) {
+
 					return &book;
 				}
 			}
@@ -239,7 +238,7 @@ public:
 	Magazine *findMagazine(string name) {
 		for (Magazine &mag : magazines) {
 			if (mag.title == name) {
-				cout << "Журнал " << mag.getName() << "найден! " << endl;
+
 				return &mag;
 			}
 
@@ -252,7 +251,7 @@ public:
 	Magazine *findMagazineAuthor(string nameAuthor) {
 		for (Magazine &mag : magazines) {
 			if (mag.author->full_name == nameAuthor) {
-				cout << "Журнал " << mag.getName() << "найден! " << endl;
+
 				return &mag;
 			}
 

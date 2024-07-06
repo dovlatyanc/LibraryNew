@@ -178,22 +178,18 @@ void LibraryMenu(Library &lib) {
 						cin >> name;
 
 
-						lib.findBook(name);
+						lib.findBook(name)->print();
 
 						system("pause");
 						break;
 
 					}
 					else if (findMenu == "2") {
-						string name, surname;
-						cout << "\t\tВведите имя автора книги :" << endl;
+						string name;
+						cout << "\t\tВведите полное имя автора книги через \"_\" :" << endl;
 						cin >> name;
-
-						cout << "\t\tВведите фамилию автора книги :" << endl;
-						cin >> surname;
-
-						lib.findBook(name, surname);
-
+						lib.findBookAuthor(name)->print();
+						system("pause");
 						break;
 
 					}
@@ -201,8 +197,6 @@ void LibraryMenu(Library &lib) {
 						int year;
 						cout << "\t\t\tВведите год издания книги : " << endl;
 						cin >> year;
-
-						lib.findBook(year);
 						if (lib.findBook(year)) {
 
 							lib.printBooksYear(year);
@@ -303,7 +297,7 @@ void LibraryMenu(Library &lib) {
 						string name;
 						cout << "\t\tВведите название журнала :" << endl;
 						cin >> name;
-						lib.findMagazine(name);
+						lib.findMagazine(name)->print();
 
 						system("pause");
 
@@ -315,8 +309,8 @@ void LibraryMenu(Library &lib) {
 						cout << "\t\tВведите название редакции :" << endl;
 						cin >> name;
 
-						lib.findMagazineAuthor(name);
-
+						lib.findMagazineAuthor(name)->print();
+						system("pause");
 						break;
 
 					}
