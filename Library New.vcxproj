@@ -130,8 +130,13 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Classes.h" />
+    <ClInclude Include="author.h" />
+    <ClInclude Include="Book.h" />
+    <ClInclude Include="Library.h" />
+    <ClInclude Include="Item.h" />
+    <ClInclude Include="Magazine.h" />
     <ClInclude Include="Menu.h" />
+    <ClInclude Include="Reader.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

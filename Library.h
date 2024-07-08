@@ -1,138 +1,11 @@
 ﻿#pragma once
 
-//сделать через принцип инкапсуляции в идеале
-
-#include<vector>
-#include<iostream>
-#include<fstream>
-#include<string>
-#include<ctime>
-#include<stdlib.h>
-#include <algorithm>
-#include <random>
-#include <unordered_set>
-#include<windows.h>
-#include <string>
-#include <sstream>
-#include <memory>
-
-
-using namespace std;
-
-class Item;
+#include "Book.h"
+#include "Magazine.h"
+#include "Reader.h"
 
 const int MIN_NUMBER = 10000;  // Минимальное значение номера читательского билета
 const int MAX_NUMBER = 99999;  // Максимальное значение номера читательского билета
-
-// класс автор
-class Author
-{
-public:
-	string full_name;
-	int year_of_birth;
-
-	Author(string full_name, int year_of_birth) : full_name(full_name), year_of_birth(year_of_birth) {}
-	Author() {};
-
-	void printName() { cout << "Автор: " << full_name << endl; }
-
-	vector <Item *> list_of_books;//список произведений
-
-
-};
-//абстрактный класс Итем
-class Item
-{
-public:
-
-	int id;//индефикатор
-	string title;//название
-	shared_ptr<Author>author;// указатель на объект класса автор
-	int year;//год издания
-	int total_number;//общее количество
-	int number_available;//количество доступных
-
-
-	Item() {}//gos constructor
-	// конструктор
-	Item(int id, string name, Author *author, int year, int total, int available) :
-		id(id), title(name), author(author), year(year),
-		total_number(total), number_available(available) {};
-
-	void setName(string name) { this->title = name; }
-
-	virtual string getName()const = 0;
-
-	virtual void print() = 0;
-
-	virtual ~Item() = 0 {};
-};
-//класс книга
-class Book :public Item
-{
-
-public:
-	string ISBN;//книжный номер
-	int pages;//количество страниц
-
-
-
-	Book(int id, string name, Author *author, int year, int total, int available, string ibsn, int pages) :
-		Item(id, name, author, year, total, available), ISBN(ibsn), pages(pages) {}//сделать уникальным;
-	Book() {}
-
-	virtual string getName()const override { return this->title; }
-
-	virtual void print() override {
-		cout << "ID: " << id << ',' << title
-			<< ',' << this->author->full_name << ','
-			<< year << ',' << total_number << ", Доступно :"
-			<< number_available << ",ISBN :" << ISBN
-			<< ", Страниц : " << pages << endl;
-	}
-
-};
-
-//класс журнал
-class Magazine : public Item
-{
-public:
-
-	int issue_num;// номер выпуска
-	string category;//категория
-
-
-	Magazine(int id, string name, Author *author, int year, int total, int available, int issue_num, string category) :
-		Item(id, name, author, year, total, available), issue_num(issue_num), category(category) {}
-	Magazine() {}
-
-	virtual string getName()const override { return this->title; }
-	virtual void print() override {
-
-
-		cout << "ID: " << id << ',' << title << ',' << this->author->full_name
-			<< ',' << year << ',' << total_number << ", Доступно :"
-			<< number_available << ", Номер выпуска :" << issue_num
-			<< ", Категория : " << category << endl;
-	}
-};
-
-
-
-// класс читатетель
-class Reader
-{
-public:
-	string name;
-	int id;//номер читательского билета рандомный из 5 цифр и уникальный
-
-	Reader() {}
-	Reader(string name) : name(name)
-	{
-	}
-	void print() { cout << "ФИО: " << name << "\nid: " << id << endl; }
-	vector<Item *> list_of_books;//список литературы читателя
-};
 
 class Library
 {
@@ -342,28 +215,6 @@ public:
 		}
 	}
 
-
-
-	//void returnItem(Reader &reader, Item &item) //возврат предметов
-	//{
-	//	for (Item *&Items : reader.list_of_books)
-	//	{
-	//		if (Items == &item) {//если нашли
-	//			item.number_available++;//предмет вернуолся и стал доступным в библиотеке
-	//			reader.list_of_books.erase(remove(reader.list_of_books.begin(),
-	//			reader.list_of_books.end(), &item), reader.list_of_books.end());//удаление предмета из смписка читателя
-	//			cout << "Предмет " << item.getName() << " успешно возвращен читателем "
-	//			<< reader.name << endl;
-	//			Sleep(1000);
-	//			break;
-	//		}
-	//		 else { 
-	//			cout << "Предмет " << item.getName() << " не найден в списке читателя " 
-	//			<< reader.name << endl;
-	//	}
-	//	}
-
-	//}
 	void returnItem(Reader &reader, Item &item) {
 		auto it = find(reader.list_of_books.begin(), reader.list_of_books.end(), &item);
 		if (it != reader.list_of_books.end()) { // item нашелся
