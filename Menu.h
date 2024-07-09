@@ -28,7 +28,7 @@ istream &operator>>(istream &is, LoadFileMenu &menu) {
 	return is;
 }
 
-void addAutor(Library &lib) {//избавление от дуболирования
+void addAutor(Library &lib) {
 
 	int year;
 	cout << "Введите год  рождения автора: " << endl;
@@ -86,10 +86,7 @@ void LibraryMenu(Library &lib) {
 		cout << "8. Загрузка данных " << endl;
 		cout << "9. Выход " << endl;
 
-		///добавить очистки консоли после выбора
-
 		cin >> menu_item_d;
-
 
 		switch (menu_item_d)
 		{

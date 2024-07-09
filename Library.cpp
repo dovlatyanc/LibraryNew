@@ -1,18 +1,18 @@
-#include "Library.h"
+п»ї#include "Library.h"
 
 int Library::generateUniqueTicketNumber()
 {
-	random_device rd;  // Генерируем случайное семя из аппаратной части
-	mt19937 gen(rd());  // Создаем генератор случайных чисел Mersenne Twister
+	random_device rd;  // Р“РµРЅРµСЂРёСЂСѓРµРј СЃР»СѓС‡Р°Р№РЅРѕРµ СЃРµРјСЏ РёР· Р°РїРїР°СЂР°С‚РЅРѕР№ С‡Р°СЃС‚Рё
+	mt19937 gen(rd());  // РЎРѕР·РґР°РµРј РіРµРЅРµСЂР°С‚РѕСЂ СЃР»СѓС‡Р°Р№РЅС‹С… С‡РёСЃРµР» Mersenne Twister
 
 	while (true) {
-		// Генерируем случайное число в диапазоне [MIN_NUMBER, MAX_NUMBER]
+		// Р“РµРЅРµСЂРёСЂСѓРµРј СЃР»СѓС‡Р°Р№РЅРѕРµ С‡РёСЃР»Рѕ РІ РґРёР°РїР°Р·РѕРЅРµ [MIN_NUMBER, MAX_NUMBER]
 		int number = MIN_NUMBER + (gen() % (MAX_NUMBER - MIN_NUMBER + 1));
 
-		// Проверяем, не был ли уже выдан этот номер билета
+		// РџСЂРѕРІРµСЂСЏРµРј, РЅРµ Р±С‹Р» Р»Рё СѓР¶Рµ РІС‹РґР°РЅ СЌС‚РѕС‚ РЅРѕРјРµСЂ Р±РёР»РµС‚Р°
 		if (issuedNumbers.find(number) == issuedNumbers.end()) {
-			issuedNumbers.insert(number);  // Добавляем новый номер в множество
-			return number;  // Возвращаем уникальный номер билета
+			issuedNumbers.insert(number);  // Р”РѕР±Р°РІР»СЏРµРј РЅРѕРІС‹Р№ РЅРѕРјРµСЂ РІ РјРЅРѕР¶РµСЃС‚РІРѕ
+			return number;  // Р’РѕР·РІСЂР°С‰Р°РµРј СѓРЅРёРєР°Р»СЊРЅС‹Р№ РЅРѕРјРµСЂ Р±РёР»РµС‚Р°
 		}
 	}
 }
@@ -25,7 +25,7 @@ Book *Library::findBook(int year)
 				return &book;
 			}
 		}
-		cout << "Книги, выпущенные в этом году  не найдены." << endl;
+		cout << "РљРЅРёРіРё, РІС‹РїСѓС‰РµРЅРЅС‹Рµ РІ СЌС‚РѕРј РіРѕРґСѓ  РЅРµ РЅР°Р№РґРµРЅС‹." << endl;
 		Sleep(1000);
 		return nullptr;
 
@@ -41,7 +41,7 @@ Book *Library::findBook(string name)
 				return &book;
 			}
 		}
-		cout << "Книги с таким названием не найдены." << endl;
+		cout << "РљРЅРёРіРё СЃ С‚Р°РєРёРј РЅР°Р·РІР°РЅРёРµРј РЅРµ РЅР°Р№РґРµРЅС‹." << endl;
 		Sleep(1000);
 		return nullptr;
 	}
@@ -56,7 +56,7 @@ Book *Library::findBookAuthor(string name)
 				return &book;
 			}
 		}
-		cout << "Книги, этого автора не найдены." << endl;
+		cout << "РљРЅРёРіРё, СЌС‚РѕРіРѕ Р°РІС‚РѕСЂР° РЅРµ РЅР°Р№РґРµРЅС‹." << endl;
 		Sleep(1000);
 		return nullptr;
 	}
@@ -70,7 +70,7 @@ Magazine *Library::findMagazine(int year)
 		}
 
 	}
-	cout << "Журналы, выпущенные в этом году  не найдены." << endl;
+	cout << "Р–СѓСЂРЅР°Р»С‹, РІС‹РїСѓС‰РµРЅРЅС‹Рµ РІ СЌС‚РѕРј РіРѕРґСѓ  РЅРµ РЅР°Р№РґРµРЅС‹." << endl;
 	Sleep(1000);
 	return nullptr;
 }
@@ -84,7 +84,7 @@ Magazine *Library::findMagazine(string name)
 		}
 
 	}
-	cout << "Журналы с таким названием не найдены." << endl;
+	cout << "Р–СѓСЂРЅР°Р»С‹ СЃ С‚Р°РєРёРј РЅР°Р·РІР°РЅРёРµРј РЅРµ РЅР°Р№РґРµРЅС‹." << endl;
 	Sleep(1000);
 	return nullptr;
 }
@@ -98,7 +98,7 @@ Magazine *Library::findMagazineAuthor(string nameAuthor)
 		}
 
 	}
-	cout << "Журналы этого автора не найдены.." << endl;
+	cout << "Р–СѓСЂРЅР°Р»С‹ СЌС‚РѕРіРѕ Р°РІС‚РѕСЂР° РЅРµ РЅР°Р№РґРµРЅС‹.." << endl;
 	Sleep(1000);
 	return nullptr;
 }
@@ -110,7 +110,7 @@ Reader *Library::findReader(int id)
 			return &reader;
 		}
 	}
-	cout << "Читатель с таким идентификатором не найден" << endl;
+	cout << "Р§РёС‚Р°С‚РµР»СЊ СЃ С‚Р°РєРёРј РёРґРµРЅС‚РёС„РёРєР°С‚РѕСЂРѕРј РЅРµ РЅР°Р№РґРµРЅ" << endl;
 	Sleep(1000);
 	return nullptr;
 }
@@ -122,7 +122,7 @@ Reader *Library::findReader(string full_name)
 			return &reader;
 		}
 	}
-	cout << "Читатель с таким именем не найден" << endl;
+	cout << "Р§РёС‚Р°С‚РµР»СЊ СЃ С‚Р°РєРёРј РёРјРµРЅРµРј РЅРµ РЅР°Р№РґРµРЅ" << endl;
 	Sleep(1000);
 	return nullptr;
 }
@@ -136,7 +136,7 @@ Author *Library::findAuthor(string name)
 			return &author;
 		}
 	}
-	cout << "Автор с таким именем не найден" << endl;
+	cout << "РђРІС‚РѕСЂ СЃ С‚Р°РєРёРј РёРјРµРЅРµРј РЅРµ РЅР°Р№РґРµРЅ" << endl;
 	Sleep(1000);
 	return nullptr;
 }
@@ -147,7 +147,7 @@ void Library::addReader(string name)
 	reader.id = generateUniqueTicketNumber();
 
 	readers.push_back(reader);
-	cout << " Читатель успешно добавлен!Номер читательского билета: " << reader.id << endl;
+	cout << " Р§РёС‚Р°С‚РµР»СЊ СѓСЃРїРµС€РЅРѕ РґРѕР±Р°РІР»РµРЅ!РќРѕРјРµСЂ С‡РёС‚Р°С‚РµР»СЊСЃРєРѕРіРѕ Р±РёР»РµС‚Р°: " << reader.id << endl;
 	countReaders++;
 	Sleep(1000);
 }
@@ -170,11 +170,11 @@ void Library::takeItem(Reader &reader, Item &item)
 	if (item.number_available > 0) {
 		item.number_available--;
 		reader.list_of_books.push_back(&item);
-		cout << "Предмет " << item.getName() << " выдан читателю " << reader.name << endl;
+		cout << "РџСЂРµРґРјРµС‚ " << item.getName() << " РІС‹РґР°РЅ С‡РёС‚Р°С‚РµР»СЋ " << reader.name << endl;
 		Sleep(1000);
 	}
 	else {
-		cout << "Недоступно для выдачи" << endl;
+		cout << "РќРµРґРѕСЃС‚СѓРїРЅРѕ РґР»СЏ РІС‹РґР°С‡Рё" << endl;
 		Sleep(1000);
 	}
 }
@@ -182,20 +182,20 @@ void Library::takeItem(Reader &reader, Item &item)
 void Library::returnItem(Reader &reader, Item &item)
 {
 	auto it = find(reader.list_of_books.begin(), reader.list_of_books.end(), &item);
-	if (it != reader.list_of_books.end()) { // item нашелся
+	if (it != reader.list_of_books.end()) { // item РЅР°С€РµР»СЃСЏ
 		item.number_available++;
 		reader.list_of_books.erase(it);
-		cout << "Предмет " << item.getName() << " успешно возвращен читателем " << reader.name << endl;
+		cout << "РџСЂРµРґРјРµС‚ " << item.getName() << " СѓСЃРїРµС€РЅРѕ РІРѕР·РІСЂР°С‰РµРЅ С‡РёС‚Р°С‚РµР»РµРј " << reader.name << endl;
 	}
-	else { // item отсутсвует
-		cout << "Предмет " << item.getName() << " не найден в списке читателя " << reader.name << endl;
+	else { // item РѕС‚СЃСѓС‚СЃРІСѓРµС‚
+		cout << "РџСЂРµРґРјРµС‚ " << item.getName() << " РЅРµ РЅР°Р№РґРµРЅ РІ СЃРїРёСЃРєРµ С‡РёС‚Р°С‚РµР»СЏ " << reader.name << endl;
 	}
 }
 
 void Library::printBooksYear(int year)
 {
 	cout << endl;
-	cout << "Книги выпущенные в " << year << " году" << endl;
+	cout << "РљРЅРёРіРё РІС‹РїСѓС‰РµРЅРЅС‹Рµ РІ " << year << " РіРѕРґСѓ" << endl;
 
 	for (Book &book : books) {
 		if (book.year == year) {
@@ -213,7 +213,7 @@ void Library::printBooksYear(int year)
 void Library::printMagYear(int year)
 {
 	cout << endl;
-	cout << "Журналы выпущенные в " << year << " году" << endl;
+	cout << "Р–СѓСЂРЅР°Р»С‹ РІС‹РїСѓС‰РµРЅРЅС‹Рµ РІ " << year << " РіРѕРґСѓ" << endl;
 
 	for (Magazine &mag : magazines) {
 		if (mag.year == year) {
@@ -230,10 +230,10 @@ void Library::printMagYear(int year)
 void Library::printBooks()
 {
 	cout << endl;
-	cout << "Список всех книг:\n";
+	cout << "РЎРїРёСЃРѕРє РІСЃРµС… РєРЅРёРі:\n";
 	for (size_t i = 0; i < books.size(); i++)
 	{
-		cout << "Книга № " << i + 1 << ' ';
+		cout << "РљРЅРёРіР° в„– " << i + 1 << ' ';
 		books[i].print();
 
 
@@ -245,10 +245,10 @@ void Library::printBooks()
 void Library::printMagazine()
 {
 	cout << endl;
-	cout << "Список всех журналов :\n";
+	cout << "РЎРїРёСЃРѕРє РІСЃРµС… Р¶СѓСЂРЅР°Р»РѕРІ :\n";
 	for (size_t i = 0; i < magazines.size(); i++)
 	{
-		cout << "Журнал  № " << i + 1 << ' ';
+		cout << "Р–СѓСЂРЅР°Р»  в„– " << i + 1 << ' ';
 		magazines[i].print();
 
 	}
@@ -259,7 +259,7 @@ void Library::printMagazine()
 void Library::printAuthors()
 {
 	cout << endl;
-	cout << "Список всех авторов :\n";
+	cout << "РЎРїРёСЃРѕРє РІСЃРµС… Р°РІС‚РѕСЂРѕРІ :\n";
 	for (size_t i = 0; i < authors.size(); i++)
 	{
 		cout << i + 1 << ") " << authors[i].full_name << endl;
@@ -271,7 +271,7 @@ void Library::printAuthors()
 void Library::printReaders()
 {
 	cout << endl;
-	cout << "Список всех читателей :\n";
+	cout << "РЎРїРёСЃРѕРє РІСЃРµС… С‡РёС‚Р°С‚РµР»РµР№ :\n";
 	for (size_t i = 0; i < readers.size(); i++)
 	{
 		cout << i + 1 << ") " << readers[i].name << endl;
@@ -305,7 +305,7 @@ bool Library::loadBooksFromFile(string filename, vector<Book> &books)
 		}
 
 		Book book;
-		book.author = make_shared<Author>(); // Используем make_shared для создания shared_ptr
+		book.author = make_shared<Author>(); // РСЃРїРѕР»СЊР·СѓРµРј make_shared РґР»СЏ СЃРѕР·РґР°РЅРёСЏ shared_ptr
 		try {
 			book.id = stoi(fields[0]);
 			book.title = fields[1];
@@ -427,7 +427,7 @@ bool Library::loadReadersFromFile(string filename, vector<Reader> &rders)
 		return false;
 	}
 
-	//int i=0;//счетчик считать произведения
+	//int i=0;//СЃС‡РµС‚С‡РёРє СЃС‡РёС‚Р°С‚СЊ РїСЂРѕРёР·РІРµРґРµРЅРёСЏ
 	string line;
 
 	while (getline(file, line)) {
